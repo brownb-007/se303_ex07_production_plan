@@ -29,4 +29,10 @@ class ProvinceTest < Minitest::Test
     assert_equal(30, @data.shortfall)
     assert_equal(0, @data.profit)
   end
+
+  def test_province_zero_demand
+    @asia.demand = 0
+    assert_equal(-25, @asia.shortfall)
+    assert_equal(0, @asia.profit)
+  end
 end
