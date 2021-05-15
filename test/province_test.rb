@@ -8,6 +8,7 @@ class ProvinceTest < Minitest::Test
 
   def setup
     @asia = Province.new(sample_province_data)
+    @data = Province.new(no_producers)
   end
 
   def test_province_shortfall
@@ -22,5 +23,10 @@ class ProvinceTest < Minitest::Test
     @asia.producers[0].production = 20
     assert_equal(-6, @asia.shortfall)
     assert_equal(292, @asia.profit)
+  end
+
+  def test_no_producers
+    assert_equal(30, @data.shortfall)
+    assert_equal(0, @data.profit)
   end
 end
