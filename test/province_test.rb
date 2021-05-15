@@ -41,4 +41,11 @@ class ProvinceTest < Minitest::Test
     assert_equal(-26, @asia.shortfall)
     assert_equal(-10, @asia.profit)
   end
+
+  #throws the right error
+  # def test_province_empty_string_demand
+  #   @asia.demand = ""
+  #   assert(@asia.shortfall.nan?)
+  #   assert(@asia.profit.nan?)
+  # end
 end
